@@ -1,0 +1,33 @@
+<header class="fixed top-0 z-50 w-full flex justify-center p-6">
+    <nav
+        class="flex items-center gap-2 px-3 py-2 bg-white/70 backdrop-blur-xl border border-white/20 rounded-full shadow-lg shadow-slate-200/50">
+
+        @for (tab of sections; track tab) {
+        <button (click)="goTo(tab)" [class]="activeTab() === tab 
+          ? 'bg-blue-600 text-white shadow-md shadow-blue-200' 
+          : 'text-slate-600 hover:bg-slate-100'"
+            class="px-5 py-2 rounded-full text-sm font-medium transition-all duration-300 ease-out capitalize">
+            {{ tab }}
+        </button>
+        }
+
+        <div class="w-[1px] h-6 bg-slate-200 mx-1"></div>
+
+        <button mat-icon-button [matMenuTriggerFor]="langMenu" class="!w-10 !h-10 text-slate-500">
+            <mat-icon class="py-1 !text-[20px]">language</mat-icon>
+        </button>
+
+        <mat-menu #langMenu="matMenu" xPosition="before" class="custom-lang-menu">
+            <button mat-menu-item (click)="setLanguage('en')">
+                <span class="flex items-center gap-3">🇺🇸 <span>English</span></span>
+            </button>
+            <button mat-menu-item (click)="setLanguage('es')">
+                <span class="flex items-center gap-3">🇪🇸 <span>Español</span></span>
+            </button>
+            <button mat-menu-item (click)="setLanguage('de')">
+                <span class="flex items-center gap-3">🇩🇪 <span>Deutsch</span></span>
+            </button>
+        </mat-menu>
+
+    </nav>
+</header>

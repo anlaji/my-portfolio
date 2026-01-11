@@ -1,26 +1,15 @@
 import { Component, signal } from '@angular/core';
-import { CommonModule } from '@angular/common';
-
-// Angular Material Imports
-import { MatButtonModule } from '@angular/material/button';
-import { MatChipsModule } from '@angular/material/chips';
-import { MatIconModule } from '@angular/material/icon';
+import { MatIcon, MatIconModule } from '@angular/material/icon';
 import { MatMenuModule } from '@angular/material/menu';
-import { MatCardModule } from '@angular/material/card';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.html',
-  imports: [
-    CommonModule,
-    MatButtonModule,
-    MatChipsModule,
-    MatIconModule,
-    MatMenuModule,
-    MatCardModule
-  ],
+  selector: 'app-header',
+  imports: [MatMenuModule, MatIconModule],
+  templateUrl: './header.html',
+  styles: ``,
 })
-export class App {
+export class Header {
+
   protected readonly activeTab = signal('bio');
   protected readonly sections = ['bio', 'projects', 'contact'] as const;
   protected readonly currentLang = signal<'en' | 'es' | 'de'>('en');
