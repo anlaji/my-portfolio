@@ -1,12 +1,16 @@
 import { Component, signal } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
 
 @Component({
-  selector: 'dev-root',
-  imports: [RouterOutlet],
+  selector: 'app-root',
   templateUrl: './app.html',
-  styleUrl: './app.scss'
 })
 export class App {
   protected readonly title = signal('portfolio');
+  protected readonly sections = ['bio', 'projects', 'contact'];
+  protected readonly activeTab = signal('bio');
+
+  goTo(id: string): void {
+    this.activeTab.set(id);
+    document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+  }
 }
