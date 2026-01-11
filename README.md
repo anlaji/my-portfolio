@@ -1,9 +1,11 @@
+
+
 # 📐 Modern Angular Portfolio | Mathematics & Software Engineering
 
 This repository hosts my professional portfolio, completely rebuilt from the ground up using **Angular 21**. Replacing a legacy Angular 15 implementation, this version represents a shift toward **fine-grained reactivity** and **Zoneless architecture**, blending mathematical precision with cutting-edge web technologies.
 
 ---
-
+🚀 **Live Demo:** [Portfolio](https://my-portfolio-anlaji.vercel.app/)
 ## 🔬 Technical Core (2026 Standards)
 
 The architecture is designed to be deterministic and highly performant, leveraging the latest advancements in the Angular ecosystem:
